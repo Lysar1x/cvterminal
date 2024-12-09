@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900;
+  }
+}
+
+@layer components {
+  .command-line {
+    @apply mt-4 mb-2;
+  }
+}
+
+.cursor {
+  position: relative;
+}
+
+.cursor::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.8);
+  }
+}
